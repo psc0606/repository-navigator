@@ -1,0 +1,135 @@
+{
+  "name": "repository-navigator",
+  "displayName": "Repository Navigator",
+  "description": "Easily and quickly clone and access your repositories, such as GitHub, Yunxiao.",
+  "version": "0.0.1",
+  "author": {
+    "name": "JPCheng",
+    "email": "pengshaocheng1990@gmail.com"
+  },
+  "engines": {
+    "vscode": "^1.72.0"
+  },
+  "categories": [
+    "Other",
+    "SCM Providers"
+  ],
+  "keywords": [
+    "github",
+    "repository",
+    "manager",
+    "repo",
+    "git",
+    "yunxiao",
+    "codeup"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "repository-navigator",
+          "title": "%repository-navigator.activitybar.title%",
+          "icon": "images/icons/bar_icon.svg"
+        }
+      ]
+    },
+    "views": {
+      "repository-navigator": [
+        {
+          "id": "myFavorite",
+          "name": "%repository-navigator.myFavorite.title%"
+        },
+        {
+          "id": "repositories",
+          "name": "%repository-navigator.repositories.title%"
+        },
+        {
+          "id": "namespaces",
+          "name": "%repository-navigator.namespaces.title%"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "repository-navigator.refreshRepositories",
+        "title": "%repository-navigator.refresh.title%",
+        "icon": "$(refresh)"
+      },
+      {
+        "command": "repository-navigator.refreshNamespaces",
+        "title": "%repository-navigator.refreshNamespaces.title%",
+        "icon": "$(refresh)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "repository-navigator.refreshRepositories",
+          "when": "view == repositories",
+          "group": "navigation@1"
+        },
+        {
+          "command": "repository-navigator.refreshNamespaces",
+          "when": "view == namespaces",
+          "group": "navigation@1"
+        }
+      ]
+    },
+    "configuration": {
+      "type": "object",
+      "title": "%repository-navigator.configuration.title%",
+      "properties": {
+        "repository-navigator.yunxiao.domain": {
+          "type": "string",
+          "default": "openapi-rdc.aliyuncs.com",
+          "description": "%repository-navigator.yunxiao.domain.description%",
+          "scope": "application"
+        },
+        "repository-navigator.yunxiao.token": {
+          "type": "string",
+          "default": "",
+          "description": "%repository-navigator.yunxiao.token.description%",
+          "scope": "application"
+        },
+        "repository-navigator.yunxiao.organizationId": {
+          "type": "string",
+          "default": "",
+          "description": "%repository-navigator.yunxiao.organizationId.description%",
+          "scope": "application"
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "webpack",
+    "watch": "webpack --watch",
+    "package": "webpack --mode production --devtool hidden-source-map",
+    "compile-tests": "tsc -p . --outDir out",
+    "watch-tests": "tsc -p . -w --outDir out",
+    "pretest": "npm run compile-tests && npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.4",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^20.17.30",
+    "@types/vscode": "^1.72.0",
+    "@typescript-eslint/eslint-plugin": "^8.28.0",
+    "@typescript-eslint/parser": "^8.28.0",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1",
+    "eslint": "^9.23.0",
+    "ts-loader": "^9.5.2",
+    "typescript": "^5.8.2",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1"
+  },
+  "dependencies": {
+    "axios": "^1.8.4",
+    "vscode": "^1.1.37"
+  }
+}

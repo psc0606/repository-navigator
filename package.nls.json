@@ -1,0 +1,14 @@
+{
+    "repository-navigator.activitybar.title": "Repository Navigator",
+    "repository-navigator.refresh.title": "Refresh Repositories",
+    "repository-navigator.configuration.title": "Repository Navigator configuration",
+    "repository-navigator.yunxiao.domain.description": "Yunxiao domain. Default is openapi-rdc.aliyuncs.com.",
+    "repository-navigator.yunxiao.token.description": "Yunxiao personal access token. You can get it in your Yunxiao personal settings. How to get the token reference: https://account-devops.aliyun.com/settings/personalAccessToken.",
+    "repository-navigator.yunxiao.organizationId.description": "Yunxiao organization ID. You can get it in your Yunxiao organization settings.",
+    "repository-navigator.treeFilter.title": "Tree Filter",
+    "repository-navigator.clearFilter.title": "Clear Filter",
+    "repository-navigator.myFavorite.title": "My Favorite",
+    "repository-navigator.repositories.title": "Repositories",
+    "repository-navigator.namespaces.title": "Namespaces",
+    "repository-navigator.refreshNamespaces.title": "Refresh Namespaces"
+}
