@@ -47,6 +47,30 @@ export interface Repository {
     webUrl: string;
 }
 
+export interface RepositoryDetail {
+    // Ignore the fields that are not used
+    // See https://help.aliyun.com/zh/yunxiao/developer-reference/getrepository-query-the-code-base
+    cloneDownloadControlGray: boolean;
+    createdAt: string;
+    description: string;
+    enableCloneDownloadControl: boolean;
+    forkCount: number;
+    httpUrlToRepo: string;
+    id: number;
+    lastActivityAt: string;
+    name: string;
+    nameWithNamespace: string;
+    openCloneDownloadControl: boolean;
+    path: string;
+    pathWithNamespace: string;
+    projectType: number;
+    sshUrlToRepo: string;
+    starCount: number;
+    updatedAt: string;
+    visibility: string;
+    webUrl: string;
+}
+
 export async function listNamespaces(
     parentId: string,
     page: number,
@@ -193,6 +217,26 @@ export async function listRepositoriesAll(
         page += 1;
     } while (pageCursor && page <= pageCursor.x_total_pages);
     return repositories;
+}
+
+export async function getRepositoryDetail(repositoryId: string): Promise<RepositoryDetail> {
+    const domain = YunxiaoConfig.domain;
+    const organizationId = YunxiaoConfig.organizationId;
+    const token = YunxiaoConfig.token;
+    const url = `https://${domain}/oapi/v1/codeup/organizations/${organizationId}/repositories/${repositoryId}`;
+
+    try {
+        const response = await axios.get(url, {
+            headers: {
+                'Content-Type': 'application/json',
+                'x-yunxiao-token': token,
+            },
+        });
+        return response.data;
+    } catch (error) {
+        console.error('Error fetching repository detail:', error);
+        throw error;
+    }
 }
 
 // Example usage

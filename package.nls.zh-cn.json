@@ -10,5 +10,6 @@
     "repository-navigator.myFavorite.title": "我的收藏",
     "repository-navigator.repositories.title": "仓库",
     "repository-navigator.namespaces.title": "分组",
-    "repository-navigator.refreshNamespaces.title": "刷新分组"
+    "repository-navigator.refreshNamespaces.title": "刷新分组",
+    "repository-navigator.cloneRepository.title": "克隆仓库"
 }

@@ -10,5 +10,6 @@
     "repository-navigator.myFavorite.title": "My Favorite",
     "repository-navigator.repositories.title": "Repositories",
     "repository-navigator.namespaces.title": "Namespaces",
-    "repository-navigator.refreshNamespaces.title": "Refresh Namespaces"
+    "repository-navigator.refreshNamespaces.title": "Refresh Namespaces",
+    "repository-navigator.cloneRepository.title": "Clone Repository"
 }

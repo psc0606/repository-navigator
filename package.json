@@ -61,6 +61,11 @@
         "command": "repository-navigator.refreshNamespaces",
         "title": "%repository-navigator.refreshNamespaces.title%",
         "icon": "$(refresh)"
+      },
+      {
+        "command": "repository-navigator.cloneRepository",
+        "title": "%repository-navigator.cloneRepository.title%",
+        "icon": "$(repo-clone)"
       }
     ],
     "menus": {
@@ -74,6 +79,13 @@
           "command": "repository-navigator.refreshNamespaces",
           "when": "view == namespaces",
           "group": "navigation@1"
+        }
+      ],
+      "view/item/context": [
+        {
+          "command": "repository-navigator.cloneRepository",
+          "when": "viewItem == repository",
+          "group": "inline"
         }
       ]
     },
