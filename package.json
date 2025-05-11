@@ -1,7 +1,7 @@
 {
   "name": "repository-navigator",
   "displayName": "Repository Navigator",
-  "description": "Easily and quickly clone and access your repositories, such as GitHub, Yunxiao.",
+  "description": "Easily and quickly clone repository from Alibaba Yunxiao codup.",
   "version": "0.0.1",
   "author": {
     "name": "JPCheng",
@@ -39,7 +39,8 @@
       "repository-navigator": [
         {
           "id": "myFavorite",
-          "name": "%repository-navigator.myFavorite.title%"
+          "name": "%repository-navigator.myFavorite.title%",
+          "when": "false"
         },
         {
           "id": "repositories",
