@@ -2,6 +2,7 @@ import * as vscode from 'vscode';
 import * as childProcess from 'child_process';
 import * as path from 'path';
 import { Repository, listRepositoriesAll, getRepositoryDetail } from './yunxiao';
+import { removeFirstPart } from './utils';
 
 export interface RepoNode {
     data: Repository;
@@ -22,6 +23,8 @@ export class RepoTreeDataProvider implements vscode.TreeDataProvider<RepoNode> {
     }
 
     getTreeItem(element: RepoNode): vscode.TreeItem | Thenable<vscode.TreeItem> {
+        let tooltip = removeFirstPart(element.data.pathWithNamespace) || element.data.name;
+        tooltip = tooltip + `\n${element.data.webUrl || ''}`;
         return {
             label: element.data.name,
             iconPath: this._iconPath,
@@ -32,6 +35,7 @@ export class RepoTreeDataProvider implements vscode.TreeDataProvider<RepoNode> {
             //     arguments: [element.data],
             // },
             contextValue: 'repository', // Set context value for the item
+            tooltip: tooltip, // Custom tooltip content, not the default label name
         };
     }
 
