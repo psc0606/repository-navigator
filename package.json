@@ -1,9 +1,12 @@
 {
   "name": "repository-navigator",
-  "displayName": "Repository Navigator",
+  "displayName": "Yunxiao Repository Navigator",
   "description": "Easily and quickly clone repository from Alibaba Yunxiao codup.",
   "version": "0.0.1",
   "publisher": "psc0606",
+  "icon": "images/icon_yunxiao.png",
+  "license": "MIT",
+  "licenseFile": "LICENSE",
   "repository": {
     "type": "git",
     "url": "https://github.com/psc0606/repository-navigator.git"
