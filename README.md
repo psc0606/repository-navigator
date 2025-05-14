@@ -6,7 +6,7 @@ The extension "repository-navigator" is used to quickly and easily clone reposit
 
 Click the refresh toolbar in the sidebar. You can search repository and namespace(Alibaba Yunxiao called it 'namespace').
 
-![Repository-Navigator](https://github.com/psc0606/repository-navigator/blob/master/images/feature-1.png)
+![Repository-Navigator](https://raw.githubusercontent.com/psc0606/repository-navigator/master/images/feature-1.png)
 
 > Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
 
@@ -22,12 +22,6 @@ Yunxiao will assign a unique organization ID to each organization. You can get y
 ## Known Issues
 
 Calling out known issues can help limit users opening duplicate issues against your extension.
-
-## Release Notes
-
-### 0.0.1
-
-Initial release of Repository Navigator.
 
 ---
 
